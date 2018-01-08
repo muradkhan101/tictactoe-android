@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false"
-    tools:context=".TicTacToeActivity">
+    tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/main_fragment"
+        android:id="@+id/fragment_main"
         class="com.example.muradkhan.tictactoe.MainFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

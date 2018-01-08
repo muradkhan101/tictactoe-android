@@ -8,7 +8,7 @@
     <string name="ok_label">OK</string>
     <string name="about_title">About Ultimate Tic Tac Toe</string> <string name="about_text">\
 This game is played just like regular Tic Tac Toe with one difference: to
-win a tile you have to win a smaller game of Tic Tac Toe inside that tile.\n\ \n\
+win a tile you have to win a smaller game of Tic Tac Toe inside that tile.\n\
 A tie happens when there are no further moves. In the case of a tie in a small board, that will count as a win for both sides in the larger game.
 </string>
 </resources>

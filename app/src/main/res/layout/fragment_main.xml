@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
-    android:background="@drawable/menu_background"
+    android:background="@drawable/main_background"
     android:elevation="@dimen/elevation_high"
     android:orientation="vertical"
     android:padding="@dimen/menu_padding"
-    tools:context=".TicTacToeActivity">
+    tools:context=".MainFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,23 +23,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/menu_button_margin"
-        android:padding="@dimen/menu_button_padding"
-        android:text="@string/continue_label"/>
+        android:paddingVertical="@dimen/menu_button_padding_vert"
+        android:paddingHorizontal="@dimen/menu_button_padding_side"
+        android:text="@string/continue_label"
+        android:textSize="@dimen/button_text_size"/>
 
     <Button
         android:id="@+id/new_game_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/menu_button_margin"
-        android:padding="@dimen/menu_button_padding"
-        android:text="@string/new_game_label"/>
+        android:paddingVertical="@dimen/menu_button_padding_vert"
+        android:paddingHorizontal="@dimen/menu_button_padding_side"
+        android:text="@string/new_game_label"
+        android:textSize="@dimen/button_text_size"/>
 
     <Button
         android:id="@+id/about_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/menu_button_margin"
-        android:padding="@dimen/menu_button_padding"
-        android:text="@string/about_label"/>
+        android:paddingVertical="@dimen/menu_button_padding_vert"
+        android:paddingHorizontal="@dimen/menu_button_padding_side"
+        android:text="@string/about_label"
+        android:textSize="@dimen/button_text_size"/>
 
 </LinearLayout>

@@ -7,30 +7,34 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.support.v7.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_main.*
+import android.util.Log
+import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
-    lateinit var mDialog: AlertDialog
+    var mDialog: AlertDialog? = null
     override fun onCreateView(
             inflater: LayoutInflater,
-            container: ViewGroup,
+            // Container can be null too so needs ?
+            container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        val rootView: View = inflater.inflate(main_fragment.id, container, false)
-//        val aboutButton: View = rootView.findViewById(R.layout.about_button)
-        about_button.setOnClickListener(View.OnClickListener {
-            fun onClick(view: View): Unit {
-                var builder: AlertDialog.Builder = AlertDialog.Builder(getActivity())
-                builder.setTitle(R.string.about_title)
-                builder.setMessage(R.string.about_text)
-                builder.setCancelable(false)
-                builder.setPositiveButton(R.string.ok_label,
-                        DialogInterface.OnClickListener {
-                            fun onClick(di: DialogInterface, i: Int) = 1
-                        })
-                mDialog.show()
-            }
+        Log.i("FragmentView", "Creating fragment view")
+        // Need to use R for layout XML I think?
+        val rootView: View = inflater.inflate(R.layout.fragment_main, container, false)
+        val aboutButton: View = rootView.findViewById(R.id.about_button)
+        aboutButton.setOnClickListener(View.OnClickListener { view: View ->
+            Log.i("FragmentView", "Set click listener")
+            // The onClick method didn't work so had to SAM w/ lambda
+//            fun onClick(view: View): Unit {
+            var builder: AlertDialog.Builder = AlertDialog.Builder(getActivity())
+            builder.setTitle(R.string.about_title)
+            builder.setMessage(R.string.about_text)
+            builder.setCancelable(false)
+            builder.setPositiveButton(R.string.ok_label,
+                    DialogInterface.OnClickListener {_: DialogInterface, _: Int -> 1 })
+            mDialog = builder.show()
+//            }
         })
         return rootView
     }
