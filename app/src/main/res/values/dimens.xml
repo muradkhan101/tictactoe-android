@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="elevation_high">8dp</dimen>
+    <dimen name="elevation_low">4dp</dimen>
+
     <dimen name="stroke_width">2dp</dimen>
     <dimen name="corner_radius">2dp</dimen>
     <dimen name="button_text_size">24sp</dimen>
+
     <dimen name="menu_padding">16dp</dimen>
     <dimen name="menu_space">12dp</dimen>
     <dimen name="menu_text_size">32sp</dimen>
     <dimen name="menu_button_margin">4dp</dimen>
     <dimen name="menu_button_padding_vert">12dp</dimen>
     <dimen name="menu_button_padding_side">24dp</dimen>
+
+    <dimen name="small_board_padding">8dp</dimen>
+    <dimen name="small_board_margin">4dp</dimen>
 </resources>

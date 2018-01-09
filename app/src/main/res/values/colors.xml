@@ -4,5 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="field_color">#f0f0f0</color>
-    <color name="border_color">#3d3d3d</color>
+    <color name="border_color">#1d1d1d</color>
+    <color name="dark_border_color">#3d3d3d</color>
+    <color name="available_color">#59d64c</color>
+    <color name="x">#44abea</color>
+    <color name="o">#f74646</color>
+    <color name="light_blue">#8dd9f7</color>
+    <color name="light_red">#f77f7f</color>
+    <color name="light_grey">#cfcfcf</color>
+    <color name="light_violet">#eb7ff4</color>
 </resources>
