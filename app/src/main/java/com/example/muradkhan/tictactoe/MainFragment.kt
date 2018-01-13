@@ -3,12 +3,12 @@ package com.example.muradkhan.tictactoe
 import android.os.Bundle
 import android.app.Fragment
 import android.content.DialogInterface
+import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.support.v7.app.AlertDialog
 import android.util.Log
-import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
@@ -27,7 +27,7 @@ class MainFragment : Fragment() {
             Log.i("FragmentView", "Set click listener")
             // The onClick method didn't work so had to SAM w/ lambda
 //            fun onClick(view: View): Unit {
-            var builder: AlertDialog.Builder = AlertDialog.Builder(getActivity())
+            var builder: AlertDialog.Builder = AlertDialog.Builder(activity)
             builder.setTitle(R.string.about_title)
             builder.setMessage(R.string.about_text)
             builder.setCancelable(false)
@@ -36,6 +36,18 @@ class MainFragment : Fragment() {
             mDialog = builder.show()
 //            }
         })
+        new_game_button.setOnClickListener(View.OnClickListener { view: View ->
+            Log.i("FragmentView", "New Game Button click listener")
+            val intent = Intent(activity, GameActivity.class)
+            activity.startActivity(intent)
+        })
+        continue_button.setOnClickListener(View.OnClickListener { view: View ->
+            Log.i("FragmentView", "Continue button click listener")
+            val intent = Intent(activity, GameActivity.class)
+            intent.putExtra(GameActivity.KEY_RESTORE, true)
+            activity.startActivity(intent)
+        })
+//        val newGame: View = rootView.findViewById(R.id.new_game_button)
         return rootView
     }
     override fun onPause() {
