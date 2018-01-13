@@ -21,12 +21,12 @@ class GameFragment: Fragment() {
     var mLastLarge: Int? = null
     var mLastSmall: Int? = null
 
-    override fun onCreate(savedInstanceState: Bundle) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setRetainInstance(true)
         initGame()
     }
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val rootView = inflater.inflate(R.layout.large_board, container, false)
         initViews(rootView)
         updateAllTiles()

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="@dimen/control_padding"
-    tools:context=".GameActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/control_padding">
     <Button
         android:id="@+id/button_restart"
         android:layout_width="wrap_content"
@@ -15,14 +13,6 @@
         android:elevation="@dimen/elevation_low"
         android:drawableTop="@drawable/restart"
         android:text="@string/restart_label"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/menu_button_padding_side"
-        android:paddingVertical="@dimen/menu_button_padding_vert"
-        android:textSize="@dimen/menu_text_size"
-        android:textColor="#FFFFFFFF"
-        android:text=""/>
     <Button
         android:id="@+id/button_main"
         android:layout_width="wrap_content"
@@ -32,4 +22,5 @@
         android:elevation="@dimen/elevation_low"
         android:drawableTop="@drawable/home"
         android:text="@string/main_menu_label"/>
+
 </LinearLayout>

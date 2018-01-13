@@ -14,4 +14,5 @@ A tie happens when there are no further moves. In the case of a tie in a small b
     <string name="restart_label">Restart</string>
     <string name="main_menu_label">Home</string>
     <string name="declare_winner">And the winner is.... %1$s!</string>
+    <string name="current_turn">It\'s %1$\'s turn!</string>
 </resources>

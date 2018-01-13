@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:background="@drawable/main_background"
-    android:elevation="@dimen/elevation_high"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="@dimen/menu_padding"
-    tools:context=".MainFragment">
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/radial_gradient"/>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@drawable/main_background"
+        android:elevation="@dimen/elevation_high"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/menu_padding"
+        tools:context=".MainFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,5 +55,6 @@
         android:paddingHorizontal="@dimen/menu_button_padding_side"
         android:text="@string/about_label"
         android:textSize="@dimen/button_text_size"/>
+    </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>

@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import android.support.v7.app.AppCompatActivity
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 
 class GameActivity: AppCompatActivity() {
-    val KEY_RESTORE = "key_restore"
-    val PREF_RESTORE = "pref_restore"
+    val KEY_RESTORE: String = "key_restore"
+    val PREF_RESTORE: String = "pref_restore"
     var mGameFragment = fragmentManager.findFragmentById(R.id.fragment_game)
-    override fun onCreate(savedInstanceState: Bundle) {
+    override fun onCreate(savedInstanceState: Bundle?): Unit {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
         mGameFragment = fragmentManager.findFragmentById(R.id.fragment_game)
@@ -32,7 +31,7 @@ class GameActivity: AppCompatActivity() {
         getPreferences(Context.MODE_PRIVATE)
             .edit()
             .putString(PREF_RESTORE, gameData)
-            .commit()
+            .apply()
         Log.d("GameActivity", "state: " + gameData)
     }
     fun restartGame() {

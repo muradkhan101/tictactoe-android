@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TicTacToeActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/radial_gradient"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+        <fragment
+            android:id="@+id/fragment_game"
+            class="com.example.muradkhan.tictactoe.GameFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_game"/>
+        <fragment
+            android:id="@+id/fragment_game_control"
+            class="com.example.muradkhan.tictactoe.ControlFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_control"/>
+    </LinearLayout>
+
+</FrameLayout>

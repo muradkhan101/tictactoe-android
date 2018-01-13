@@ -17,12 +17,18 @@ class MainFragment : Fragment() {
             inflater: LayoutInflater,
             // Container can be null too so needs ?
             container: ViewGroup?,
+            // Bundle can be null, needs ?
             savedInstanceState: Bundle?
     ): View {
-        Log.i("FragmentView", "Creating fragment view")
+        Log.d("FragmentView", "Creating fragment view")
+
         // Need to use R for layout XML I think?
         val rootView: View = inflater.inflate(R.layout.fragment_main, container, false)
         val aboutButton: View = rootView.findViewById(R.id.about_button)
+
+        Log.d("FragmentView", "aboutButton click listener")
+
+        // Get NullPointerException if don't use R to find View
         aboutButton.setOnClickListener(View.OnClickListener { view: View ->
             Log.d("FragmentView", "Set click listener")
             // The onClick method didn't work so had to SAM w/ lambda
@@ -36,15 +42,22 @@ class MainFragment : Fragment() {
             mDialog = builder.show()
 //            }
         })
-        new_game_button.setOnClickListener(View.OnClickListener { view: View ->
+
+        Log.d("FragmentView", "NewGameButton click listener")
+        val newGameButton: View = rootView.findViewById(R.id.new_game_button)
+        newGameButton.setOnClickListener(View.OnClickListener { view: View ->
             Log.d("FragmentView", "New Game Button click listener")
             val intent = Intent(activity, GameActivity::class.java)
             activity.startActivity(intent)
         })
-        continue_button.setOnClickListener(View.OnClickListener { view: View ->
+
+        Log.d("FragmentView", "ContinueButton click listener")
+
+        val continueButton: View = rootView.findViewById(R.id.continue_button)
+        continueButton.setOnClickListener(View.OnClickListener { view: View ->
             Log.d("FragmentView", "Continue button click listener")
             val intent = Intent(activity, GameActivity::class.java)
-            intent.putExtra((activity as GameActivity).KEY_RESTORE, true)
+            intent.putExtra(GameActivity::KEY_RESTORE.toString(), true)
             activity.startActivity(intent)
         })
 //        val newGame: View = rootView.findViewById(R.id.new_game_button)
