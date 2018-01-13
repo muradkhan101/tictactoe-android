@@ -15,9 +15,9 @@ class Tile(val mGame: GameFragment) {
     private val LEVEL_TIE = 4
     var mOwner = Owner.NEITHER
     var mView: View? = null
-    var subTiles: Array<Tile>? = null
+    var subTiles: Array<Tile?> = arrayOfNulls<Tile>(1)
 
-    private fun getDrawableStates() {
+    fun updateDrawableState() {
         var level = getLevel()
         mView?.getBackground()?.setLevel(level) ?: return
         // Usually this would smart cast variable as ImageButton
@@ -38,18 +38,62 @@ class Tile(val mGame: GameFragment) {
         }
     fun findWinner(): Owner {
         if (mOwner != Owner.NEITHER) return mOwner
-        var totalX = arrayOfNulls<Int>(4)
-        var totalO = arrayOfNulls<Int>(4)
+        var totalX = arrayOf(0, 0, 0, 0)
+        var totalO = arrayOf(0, 0, 0, 0)
         countCaptures(totalX, totalO)
         if (totalX[3] > 0) return Owner.X
         if (totalO[3] > 0) return Owner.O
         var total = 0
         for (row in 0..2) {
             for (col in 0..2) {
-                val owner = subTiles[3*row + col].mOwner
+                val owner = subTiles[3*row + col]?.mOwner
                 if (owner != Owner.NEITHER) total++
             }
         }
         return if (total == 9) Owner.BOTH else Owner.NEITHER
+    }
+    fun countCaptures(totalX: Array<Int>, totalY: Array<Int>) {
+        var capturedX: Int
+        var capturedO: Int
+        for (i in 0..2) {
+            capturedX = 0
+            capturedO = 0
+            for (j in 0..2) {
+                val owner = subTiles[3 * i + j]?.mOwner
+                if (owner == Owner.X || owner == Owner.BOTH) capturedX++
+                if (owner == Owner.O || owner == Owner.BOTH) capturedO++
+            }
+            totalX[capturedX]++
+            totalY[capturedO]++
+        }
+        for (j in 0..2) {
+            capturedX = 0
+            capturedO = 0
+            for (i in 0..2) {
+                val owner = subTiles[3 * i + j]?.mOwner
+                if (owner == Owner.X || owner == Owner.BOTH) capturedX++
+                if (owner == Owner.O || owner == Owner.BOTH) capturedO++
+            }
+            totalX[capturedX]++
+            totalY[capturedO]++
+        }
+        capturedX = 0
+        capturedO = 0
+        for (i in 0..2) {
+            val owner = subTiles[3*i + i]?.mOwner
+            if (owner == Owner.X || owner == Owner.BOTH) capturedX++
+            if (owner == Owner.O || owner == Owner.BOTH) capturedO++
+        }
+        totalX[capturedX]++
+        totalY[capturedO]++
+        capturedX = 0
+        capturedO = 0
+        for (i in 0..2) {
+            val owner = subTiles[3*i + (2-i)]?.mOwner
+            if (owner == Owner.X || owner == Owner.BOTH) capturedX++
+            if (owner == Owner.O || owner == Owner.BOTH) capturedO++
+        }
+        totalX[capturedX]++
+        totalX[capturedO]++
     }
 }

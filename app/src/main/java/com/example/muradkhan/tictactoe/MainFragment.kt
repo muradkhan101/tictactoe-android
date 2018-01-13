@@ -24,7 +24,7 @@ class MainFragment : Fragment() {
         val rootView: View = inflater.inflate(R.layout.fragment_main, container, false)
         val aboutButton: View = rootView.findViewById(R.id.about_button)
         aboutButton.setOnClickListener(View.OnClickListener { view: View ->
-            Log.i("FragmentView", "Set click listener")
+            Log.d("FragmentView", "Set click listener")
             // The onClick method didn't work so had to SAM w/ lambda
 //            fun onClick(view: View): Unit {
             var builder: AlertDialog.Builder = AlertDialog.Builder(activity)
@@ -37,14 +37,14 @@ class MainFragment : Fragment() {
 //            }
         })
         new_game_button.setOnClickListener(View.OnClickListener { view: View ->
-            Log.i("FragmentView", "New Game Button click listener")
-            val intent = Intent(activity, GameActivity.class)
+            Log.d("FragmentView", "New Game Button click listener")
+            val intent = Intent(activity, GameActivity::class.java)
             activity.startActivity(intent)
         })
         continue_button.setOnClickListener(View.OnClickListener { view: View ->
-            Log.i("FragmentView", "Continue button click listener")
-            val intent = Intent(activity, GameActivity.class)
-            intent.putExtra(GameActivity.KEY_RESTORE, true)
+            Log.d("FragmentView", "Continue button click listener")
+            val intent = Intent(activity, GameActivity::class.java)
+            intent.putExtra((activity as GameActivity).KEY_RESTORE, true)
             activity.startActivity(intent)
         })
 //        val newGame: View = rootView.findViewById(R.id.new_game_button)

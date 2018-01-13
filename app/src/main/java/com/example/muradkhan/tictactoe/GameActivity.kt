@@ -11,7 +11,7 @@ import android.content.DialogInterface
 class GameActivity: AppCompatActivity() {
     val KEY_RESTORE = "key_restore"
     val PREF_RESTORE = "pref_restore"
-    private mGameFragment: GameFragment
+    var mGameFragment = fragmentManager.findFragmentById(R.id.fragment_game)
     override fun onCreate(savedInstanceState: Bundle) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
@@ -20,13 +20,15 @@ class GameActivity: AppCompatActivity() {
         if (restore) {
             val gameData = getPreferences(Context.MODE_PRIVATE)
                     .getString(PREF_RESTORE, null)
-            if (gameData != null) mGameFragment.putState(gameData)
+            if (gameData != null) (mGameFragment as GameFragment).putState(gameData)
         }
         Log.d("GameActivity", "restore: " + restore)
     }
     override fun onPause() {
         super.onPause()
-        val gameData = mGameFragment.getState()
+        // class functions would work here, just had to do cast first
+        // even utility functions didnt work without cast
+        val gameData: String = (mGameFragment as GameFragment).getState()
         getPreferences(Context.MODE_PRIVATE)
             .edit()
             .putString(PREF_RESTORE, gameData)
@@ -34,7 +36,7 @@ class GameActivity: AppCompatActivity() {
         Log.d("GameActivity", "state: " + gameData)
     }
     fun restartGame() {
-        mGameFragment.restartGame()
+        (mGameFragment as GameFragment).restartGame()
     }
     fun reportWinner(winner: String) {
         var builder = AlertDialog.Builder(this)
@@ -46,7 +48,6 @@ class GameActivity: AppCompatActivity() {
                 }
         )
         builder.create().show()
-        mGameFragment.initGame()
-
+        (mGameFragment as GameFragment).initGame()
     }
 }

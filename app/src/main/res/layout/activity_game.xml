@@ -22,5 +22,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_game" />
+    <fragment
+        android:id="@+id/fragment_game_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        class="com.example.muradkhan.tictactoe.ControlFragment"
+        tools:layout="@layout/fragment_control"/>
     </LinearLayout>
 </FrameLayout>
