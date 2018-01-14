@@ -16,6 +16,7 @@
         android:drawableTop="@drawable/restart"
         android:text="@string/restart_label"/>
     <TextView
+        android:id="@+id/current_turn_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/menu_button_padding_side"

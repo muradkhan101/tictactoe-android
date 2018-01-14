@@ -5,6 +5,7 @@ import android.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_control.*
 
 class ControlFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater,
@@ -17,5 +18,9 @@ class ControlFragment: Fragment() {
         val restartButton: View = rootView.findViewById(R.id.button_restart)
         restartButton.setOnClickListener(View.OnClickListener { _ -> (activity as GameActivity).restartGame() })
         return rootView
+    }
+    fun updateTurnDisplay(current: String) {
+        val newText = resources.getString(R.string.current_turn, current)
+        current_turn_display.setText(newText)
     }
 }

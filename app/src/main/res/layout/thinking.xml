@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/thinking"
+    android:clickable="true"
+    android:visibility="gone"
+    tools:showIn="@layout/activity_game">
+    <ProgressBar
+        android:layout_width="@dimen/thinking_size"
+        android:layout_height="@dimen/thinking_size"
+        android:background="@drawable/thinking_background"
+        android:elevation="@dimen/elevation_high"
+        android:layout_marginTop="@dimen/control_padding"
+        android:layout_marginLeft="@dimen/control_padding"
+        android:indeterminate="true"/>
+
+</FrameLayout>

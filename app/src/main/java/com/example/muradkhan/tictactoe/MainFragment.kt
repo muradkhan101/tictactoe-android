@@ -1,5 +1,6 @@
 package com.example.muradkhan.tictactoe
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.app.Fragment
 import android.content.DialogInterface
@@ -7,9 +8,8 @@ import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
-import android.support.v7.app.AlertDialog
+
 import android.util.Log
-import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment() {
     var mDialog: AlertDialog? = null
@@ -29,7 +29,8 @@ class MainFragment : Fragment() {
         Log.d("FragmentView", "aboutButton click listener")
 
         // Get NullPointerException if don't use R to find View
-        aboutButton.setOnClickListener(View.OnClickListener { view: View ->
+        // The View.OnClickListener is unnecessary if not using the view in function (click handlers below)
+        aboutButton.setOnClickListener(View.OnClickListener { _ ->
             Log.d("FragmentView", "Set click listener")
             // The onClick method didn't work so had to SAM w/ lambda
 //            fun onClick(view: View): Unit {
@@ -45,7 +46,7 @@ class MainFragment : Fragment() {
 
         Log.d("FragmentView", "NewGameButton click listener")
         val newGameButton: View = rootView.findViewById(R.id.new_game_button)
-        newGameButton.setOnClickListener(View.OnClickListener { view: View ->
+        newGameButton.setOnClickListener({ _ ->
             Log.d("FragmentView", "New Game Button click listener")
             val intent = Intent(activity, GameActivity::class.java)
             activity.startActivity(intent)
@@ -54,7 +55,7 @@ class MainFragment : Fragment() {
         Log.d("FragmentView", "ContinueButton click listener")
 
         val continueButton: View = rootView.findViewById(R.id.continue_button)
-        continueButton.setOnClickListener(View.OnClickListener { view: View ->
+        continueButton.setOnClickListener({ _ ->
             Log.d("FragmentView", "Continue button click listener")
             val intent = Intent(activity, GameActivity::class.java)
             intent.putExtra(GameActivity::KEY_RESTORE.toString(), true)

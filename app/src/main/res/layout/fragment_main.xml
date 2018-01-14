@@ -8,53 +8,54 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/radial_gradient"/>
+
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/main_background"
         android:elevation="@dimen/elevation_high"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="@dimen/menu_padding"
         tools:context=".MainFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/menu_space"
-        android:text="@string/long_app_name"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textSize="@dimen/menu_text_size"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/menu_space"
+            android:text="@string/long_app_name"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="@dimen/menu_text_size" />
 
-    <Button
-        android:id="@+id/continue_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/menu_button_margin"
-        android:paddingVertical="@dimen/menu_button_padding_vert"
-        android:paddingHorizontal="@dimen/menu_button_padding_side"
-        android:text="@string/continue_label"
-        android:textSize="@dimen/button_text_size"/>
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/menu_button_margin"
+            android:paddingHorizontal="@dimen/menu_button_padding_side"
+            android:paddingVertical="@dimen/menu_button_padding_vert"
+            android:text="@string/continue_label"
+            android:textSize="@dimen/button_text_size" />
 
-    <Button
-        android:id="@+id/new_game_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/menu_button_margin"
-        android:paddingVertical="@dimen/menu_button_padding_vert"
-        android:paddingHorizontal="@dimen/menu_button_padding_side"
-        android:text="@string/new_game_label"
-        android:textSize="@dimen/button_text_size"/>
+        <Button
+            android:id="@+id/new_game_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/menu_button_margin"
+            android:paddingHorizontal="@dimen/menu_button_padding_side"
+            android:paddingVertical="@dimen/menu_button_padding_vert"
+            android:text="@string/new_game_label"
+            android:textSize="@dimen/button_text_size" />
 
-    <Button
-        android:id="@+id/about_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/menu_button_margin"
-        android:paddingVertical="@dimen/menu_button_padding_vert"
-        android:paddingHorizontal="@dimen/menu_button_padding_side"
-        android:text="@string/about_label"
-        android:textSize="@dimen/button_text_size"/>
+        <Button
+            android:id="@+id/about_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/menu_button_margin"
+            android:paddingHorizontal="@dimen/menu_button_padding_side"
+            android:paddingVertical="@dimen/menu_button_padding_vert"
+            android:text="@string/about_label"
+            android:textSize="@dimen/button_text_size" />
     </LinearLayout>
 
 </FrameLayout>

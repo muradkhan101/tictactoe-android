@@ -29,4 +29,5 @@
         class="com.example.muradkhan.tictactoe.ControlFragment"
         tools:layout="@layout/fragment_control"/>
     </LinearLayout>
+    <include layout="@layout/thinking"/>
 </FrameLayout>

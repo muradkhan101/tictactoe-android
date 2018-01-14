@@ -22,4 +22,7 @@
     <dimen name="tile_size">32dp</dimen>
     <dimen name="tile_margin">2dp</dimen>
     <dimen name="tile_padding">2dp</dimen>
+
+    <dimen name="thinking_size">75dp</dimen>
+
 </resources>
