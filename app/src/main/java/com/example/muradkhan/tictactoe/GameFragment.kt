@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.media.AudioManager
 import android.media.SoundPool
+import kotlinx.android.synthetic.main.activity_game.*
 import java.util.HashSet
 
 class GameFragment : Fragment() {
@@ -46,7 +47,7 @@ class GameFragment : Fragment() {
 
     fun initGame() {
         Log.d("initGame", "Creating game")
-//        (controlFragment as ControlFragment).updateTurnDisplay("X")
+//        (activity.fragmentManager.fragments[1] as ControlFragment ?: null)?.updateTurnDisplay("X")
         mEntireBoard = Tile(this)
         for (i in 0..8) {
             mLargeTiles[i] = Tile(this)
@@ -102,10 +103,10 @@ class GameFragment : Fragment() {
     private fun switchTurns() {
         if (mPlayer == Tile.Owner.X) {
             mPlayer = Tile.Owner.O
-//            (controlFragment as ControlFragment).updateTurnDisplay("O")
+            (activity.fragmentManager.findFragmentById(R.id.fragment_game_control) as ControlFragment).updateTurnDisplay("O")
         } else {
             mPlayer = Tile.Owner.X
-//            (controlFragment as ControlFragment).updateTurnDisplay("X")
+            (activity.fragmentManager.findFragmentById(R.id.fragment_game_control) as ControlFragment).updateTurnDisplay("X")
         }
     }
 
